@@ -17,3 +17,26 @@ closeSidebar.addEventListener("click", function () {
   hamburger.classList.remove("hidden"); // Show hamburger icon again
   sidebar.style.backgroundColor = ""; // Reset background color
 });
+
+const carousel = document.getElementById('carousel');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  
+  let slideIndex = 0;
+  const totalSlides = carousel.children.length;
+  const visibleSlides = 3;
+  const slideWidth = "50%"; // width of one image in px
+
+  next.addEventListener('click', () => {
+    if (slideIndex < totalSlides - visibleSlides) {
+      slideIndex++;
+      updateCarousel();
+    }
+  });
+
+  prev.addEventListener("click", () => {
+    if (slideIndex > 0) {
+      slideIndex--;
+      updateCarousel();
+    }
+  });
